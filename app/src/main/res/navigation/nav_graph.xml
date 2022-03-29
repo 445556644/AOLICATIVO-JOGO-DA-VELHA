@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentJogo">
+
+
+    <fragment
+        android:id="@+id/fragmentInicio"
+        android:name="br.senai.sp.cotia.appjogodavelha.fragment.fragmentInicio"
+        android:label="fragment_inicio"
+        tools:layout="@layout/fragment_inicio">
+        <action
+            android:id="@+id/action_fragmentInicio_to_fragmentJogo"
+            app:destination="@id/fragmentJogo" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentJogo"
+        android:name="br.senai.sp.cotia.appjogodavelha.fragment.fragmentJogo"
+        android:label="Jogue ! ! !"
+        tools:layout="@layout/fragment_jogo">
+        <action
+            android:id="@+id/action_fragmentJogo_to_fragmentPref"
+            app:destination="@id/fragmentPref" />
+        <action
+            android:id="@+id/action_fragmentJogo_to_fragmentInicio"
+            app:destination="@id/fragmentInicio" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentPref"
+        android:name="br.senai.sp.cotia.appjogodavelha.fragment.FragmentPref"
+        android:label="fragment_fragment"
+        tools:layout="@layout/fragment_fragment" />
+</navigation>
