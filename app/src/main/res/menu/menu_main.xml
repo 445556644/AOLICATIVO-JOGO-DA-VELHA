@@ -3,8 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="br.senai.sp.cotia.appjogodavelha.activity.MainActivity">
     <item
-        android:id="@+id/action_settings"
+        android:icon="@android:drawable/ic_menu_revert"
+        android:id="@+id/menu_resetar"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="@string/resetar"
+        app:showAsAction="always" />
+    <item
+        android:icon="@android:drawable/ic_menu_compass"
+        android:id="@+id/menu_voltarInicio"
+        android:orderInCategory="100"
+        android:title="@string/voltar_Inicio"
         app:showAsAction="never" />
+
+    <item
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:id="@+id/menu_preferencias"
+        android:orderInCategory="100"
+        android:title="@string/preferencias"
+        app:showAsAction="never" />
+
 </menu>

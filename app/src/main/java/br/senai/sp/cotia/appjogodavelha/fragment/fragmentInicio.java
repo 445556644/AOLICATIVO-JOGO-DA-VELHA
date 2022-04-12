@@ -1,52 +1,76 @@
-package br.senai.sp.cotia.appjogodavelha.fragment;
+    package br.senai.sp.cotia.appjogodavelha.fragment;
 
-import android.os.Bundle;
+    import android.content.Context;
+    import android.content.SharedPreferences;
+    import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
+    import androidx.annotation.NonNull;
+    import androidx.appcompat.app.AppCompatActivity;
+    import androidx.fragment.app.Fragment;
+    import androidx.navigation.fragment.NavHostFragment;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+    import android.preference.PreferenceManager;
+    import android.view.LayoutInflater;
+    import android.view.View;
+    import android.view.ViewGroup;
 
-import br.senai.sp.cotia.appjogodavelha.R;
+    import br.senai.sp.cotia.appjogodavelha.R;
+    import br.senai.sp.cotia.appjogodavelha.databinding.FragmentInicioBinding;
+    import br.senai.sp.cotia.appjogodavelha.databinding.FragmentJogoBinding;
 
-
-public class fragmentInicio extends Fragment {
-
-
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    private String mParam1;
-    private String mParam2;
-
-    public fragmentInicio() {
-        // Required empty public constructor
-    }
+    public class fragmentInicio extends Fragment {
 
 
-    public static fragmentInicio newInstance(String param1, String param2) {
-        fragmentInicio fragment = new fragmentInicio();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+
+        private @NonNull FragmentInicioBinding biding;
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            // Inflate the layout for this fragment
+            biding = FragmentInicioBinding.inflate(inflater, container, false);
+
+            // ação do btn que leva ao fragment do jogo
+
+            biding.btProximo.setOnClickListener(view -> {
+
+                biding.nomeJog1.getText();
+                biding.nomeJog2.getText();
+                NavHostFragment.findNavController(fragmentInicio.this).navigate(R.id
+                .action_fragmentInicio_to_fragmentJogo);
+            });
+
+            return biding.getRoot();
+        }
+
+        public static void salvarNomeJog1(String nomeJ1, Context context) {
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("nome_jog_1", nomeJ1);
+            editor.commit();
+        }
+
+        public static void salvarNomeJog2(String nomeJ2, Context context) {
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("nome_jog_2", nomeJ2);
+            editor.commit();
+        }
+
+
+
+        @Override
+        public void onStart() {
+
+            super.onStart();
+
+            // para remover a toolbar
+            // pegar uma referencia do tipo AppCompactActivity
+            AppCompatActivity minhaActivity = (AppCompatActivity) getActivity();
+            // oculta a toolbar
+            minhaActivity.getSupportActionBar().hide();
+
+
         }
     }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_inicio, container, false);
-    }
-}

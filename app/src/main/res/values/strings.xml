@@ -3,11 +3,22 @@
     <string name="action_settings">Settings</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="jogador1">Jogador 1 (X) </string>
-    <string name="jogador2">Jogador 2 (O)</string>
+    <string name="jogador1"> |%1$s|- |%2$s| </string>
+    <string name="jogador2"> |%1$s|- |%2$s| </string>
     <string name="valorX">0</string>
     <string name="valorO">0</string>
     <string name="venceu">Parabéns, Você Venceu !!!</string>
     <string name="velha">Deu Velha!!!</string>
+    <string name="resetar">Zerar O Placar</string>
+    <string name="voltar_Inicio">Voltar a Tela Inicial</string>
+    <string name="preferencias">Preferências</string>
+    <string name="simbJog1">Simbolo Jogador 1</string>
+    <string name="simbJog2">Simbolo Jogador 2</string>
+    <string name="jog1">Nome Jogador 1</string>
+    <string name="jog2">Nome Jogador 2</string>
+    <string name="escolhaJog1">Esclha o Simbolo do Jogador 1</string>
+    <string name="escolhaJog2">Esclha o Simbolo do Jogador 2</string>
+    <string name="bemVindo">Bem Vindo !!!</string>
+    <string name="jogar">Play</string>
 
 </resources>

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/fragmentJogo">
+    app:startDestination="@id/fragmentInicio">
 
 
     <fragment
@@ -28,8 +28,9 @@
             app:destination="@id/fragmentInicio" />
     </fragment>
     <fragment
+
         android:id="@+id/fragmentPref"
         android:name="br.senai.sp.cotia.appjogodavelha.fragment.FragmentPref"
-        android:label="fragment_fragment"
+        android:label="@string/preferencias"
         tools:layout="@layout/fragment_fragment" />
 </navigation>

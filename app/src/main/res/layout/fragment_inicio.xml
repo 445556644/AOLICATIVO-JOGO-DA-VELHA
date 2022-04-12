@@ -5,10 +5,50 @@
     android:layout_height="match_parent"
     tools:context=".fragment.fragmentInicio">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:background="@drawable/jogo">
+
+    </LinearLayout>
+
+   <LinearLayout
+       android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+
+       <EditText
+           android:id="@+id/nome_jog_1"
+           android:text="@string/jog1"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"/>
+
+       <EditText
+
+           android:id="@+id/nome_jog_2"
+           android:text="@string/jog2"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"/>
+
+   </LinearLayout>
+
+
+
+
+    <Button
+        android:id="@+id/btProximo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:width="150dp"
+        android:background="@color/verdeClaro"
+        android:padding="20dp"
+        android:text="@string/jogar"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+
 
 </FrameLayout>
